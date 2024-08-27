@@ -7,13 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BinaryConverterComponent } from './binary-converter/binary-converter.component';
 import { MorseCodeTranslatorComponent } from './morse-code-translator/morse-code-translator.component';
 import { HeaderComponent } from './header/header.component';
+import { WhatsappComponent } from './whatsapp/whatsapp.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BinaryConverterComponent,
     MorseCodeTranslatorComponent,
-    HeaderComponent
+    HeaderComponent,
+    WhatsappComponent
   ],
   imports: [
     BrowserModule,

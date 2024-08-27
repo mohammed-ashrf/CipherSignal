@@ -89,3 +89,50 @@ button:hover {
 textarea[readonly] {
     background-color: #f9f9f9;
 }
+
+/* Container for the input and button */
+/* Input group styling */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Label styling */
+.input-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #495057;
+}
+
+/* Input field styling */
+.input-group input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+/* Input focus state */
+.input-group input:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
+}
+
+/* Button hover state */
+.send-group button:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    textarea {
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
