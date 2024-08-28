@@ -33,11 +33,6 @@
 
      <!-- Phone Number and Send Button -->
      <div class="send-group">
-        <div class="input-group">
-            <label for="phoneNumber">Phone Number:</label>
-            <small class="hint">Include the country code without the + symbol. E.g., 201001324622</small>
-            <input id="phoneNumber" [(ngModel)]="phone_number" placeholder="Enter phone number or select contact (e.g., 201001324622)" />
-        </div>
         <button (click)="sendMessage()">Send via WhatsApp</button>
     </div>
 </div>

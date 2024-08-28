@@ -12,8 +12,6 @@ export class MorseCodeTranslatorComponent {
   textOutput: string = '';
   morseOutput: string = '';
   currentView: string = 'textToMorse'; // Default view
-  phone_number: string = '';
-  selectedContact: string = '';
 
   constructor(private morseCodeService: MorseCodeService, private whatsappService: WhatsappService) {}
 
@@ -34,13 +32,6 @@ export class MorseCodeTranslatorComponent {
   }
 
   sendMessage() {
-    // Determine phone number to use
-    const phone = this.selectedContact || this.phone_number;
-    if (!phone) {
-      alert('Please enter or select a phone number.');
-      return;
-    }
-
     // Determine message to send
     const message = this.currentView === 'binaryToText' ? this.textOutput : this.morseOutput;
     if (!message) {
@@ -48,8 +39,7 @@ export class MorseCodeTranslatorComponent {
       return;
     }
 
-    console.log(`Sending message to: ${phone}`);
-    this.whatsappService.sendViaWhatsapp(phone, message)
+    this.whatsappService.sendViaWhatsapp(message)
       .then(() => alert('Message sent successfully!'))
       .catch(err => alert(`Failed to send message: ${err}`));
   }

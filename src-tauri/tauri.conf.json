@@ -6,7 +6,7 @@
     "distDir": "../dist/decoder"
   },
   "package": {
-    "productName": "decoder",
+    "productName": "SignalCipher",
     "version": "0.2.0"
   },
   "tauri": {

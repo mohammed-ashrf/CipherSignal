@@ -7,9 +7,9 @@ import { Router } from '@angular/router';
 export class WhatsappService {
   constructor(private router: Router) {}
 
-  async sendViaWhatsapp(phoneNumber: string, message: string): Promise<any> {
+  async sendViaWhatsapp( message: string): Promise<any> {
     try {
-      const response = await invoke('send_via_whatsapp', { phoneNumber, message });
+      const response = await invoke('send_via_whatsapp', { message });
       // Handle success response if needed
       console.log('Message sent successfully!');
       return response;

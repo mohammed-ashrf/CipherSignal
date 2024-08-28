@@ -12,8 +12,6 @@ export class BinaryConverterComponent {
   textOutput: string = '';
   binaryOutput: string = '';
   currentView: string = 'textToBinary'; 
-  phone_number: string = '';
-  selectedContact: string = '';
 
   constructor(private binaryService: BinaryService, private whatsappService: WhatsappService) {}
 
@@ -34,13 +32,6 @@ export class BinaryConverterComponent {
   }
 
   sendMessage() {
-    // Determine phone number to use
-    const phone = this.selectedContact || this.phone_number;
-    if (!phone) {
-      alert('Please enter or select a phone number.');
-      return;
-    }
-
     // Determine message to send
     const message = this.currentView === 'binaryToText' ? this.textOutput : this.binaryOutput;
     if (!message) {
@@ -48,9 +39,8 @@ export class BinaryConverterComponent {
       return;
     }
 
-    console.log(`Sending message to: ${phone}`);
-    this.whatsappService.sendViaWhatsapp(phone, message)
-      .then(() => alert('Message sent successfully!'))
+    this.whatsappService.sendViaWhatsapp( message)
+      .then(() => console.log("sending message"))
       .catch(err => alert(`Failed to send message: ${err}`));
   }
 }
